@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@theme {
+  /* Color scheme */
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+  --color-primary-950: #082f49;
+
+  --color-secondary-50: #f5f3ff;
+  --color-secondary-100: #ede9fe;
+  --color-secondary-200: #ddd6fe;
+  --color-secondary-300: #c4b5fd;
+  --color-secondary-400: #a78bfa;
+  --color-secondary-500: #8b5cf6;
+  --color-secondary-600: #7c3aed;
+  --color-secondary-700: #6d28d9;
+  --color-secondary-800: #5b21b6;
+  --color-secondary-900: #4c1d95;
+  --color-secondary-950: #2e1065;
+
+  --color-accent-50: #ecfdf5;
+  --color-accent-100: #d1fae5;
+  --color-accent-200: #a7f3d0;
+  --color-accent-300: #6ee7b7;
+  --color-accent-400: #34d399;
+  --color-accent-500: #10b981;
+  --color-accent-600: #059669;
+  --color-accent-700: #047857;
+  --color-accent-800: #065f46;
+  --color-accent-900: #064e3b;
+  --color-accent-950: #022c22;
+
+  /* Font families */
+  --font-family-sans: 'Inter', sans-serif;
+  --font-family-display: 'Poppins', sans-serif;
+
+  /* Animations */
+  --animation-fade-in: fadeIn 1s ease-in-out;
+  --animation-slide-up: slideUp 0.5s ease-out;
+  --animation-slide-down: slideDown 0.5s ease-out;
+  --animation-slide-in-right: slideInRight 0.5s ease-out;
+  --animation-slide-in-left: slideInLeft 0.5s ease-out;
+  --animation-bounce-slow: bounce 3s infinite;
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+@layer base {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 250, 250, 250;
+    --background-end-rgb: 255, 255, 255;
+  }
+
+  .dark {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 10, 10, 30;
+    --background-end-rgb: 0, 0, 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))  /* Added closing parenthesis here */
+      )
+      rgb(var(--background-start-rgb));
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+    font-family: var(--font-family-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-display);
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-20 px-4 @md:px-8 @lg:px-16 transition-colors;
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500/50 dark:bg-primary-500 dark:hover:bg-primary-600;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-400/50;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white focus:ring-primary-500/50 dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-500 dark:hover:text-white;
+  }
+
+  .card {
+    @apply rounded-xl shadow-lg bg-white dark:bg-gray-800 p-6 transition-all duration-300 hover:shadow-xl;
+  }
+
+  .input {
+    @apply px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+  }
+
+  .heading-xl { @apply text-4xl @md:text-5xl @lg:text-6xl; }
+  .heading-lg { @apply text-3xl @md:text-4xl @lg:text-5xl; }
+  .heading-md { @apply text-2xl @md:text-3xl @lg:text-4xl; }
+  .heading-sm { @apply text-xl @md:text-2xl @lg:text-3xl; }
+
+  .badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+    
+    &-primary {
+      @apply bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200;
+    }
+    &-secondary {
+      @apply bg-secondary-100 text-secondary-800 dark:bg-secondary-900 dark:text-secondary-200;
+    }
+    &-accent {
+      @apply bg-accent-100 text-accent-800 dark:bg-accent-900 dark:text-accent-200;
+    }
+  }
+
+  .timeline-dots::before {
+    @apply absolute left-0 top-0 bottom-0 w-0.5 bg-primary-500 -translate-x-1/2;
+    content: "";
+  }
+
+  .timeline-dot::before {
+    @apply absolute left-0 top-6 w-3 h-3 rounded-full bg-primary-500 -translate-x-1/2;
+    content: "";
+  }
+
+  .skill-bar {
+    @apply h-2 rounded bg-gray-200 dark:bg-gray-700 overflow-hidden;
+    
+    &-progress {
+      @apply h-full rounded bg-gradient-to-r from-primary-500 to-primary-700;
+    }
+  }
+}
+
+@layer utilities {
+  .hidden-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, var(--color-primary-500), var(--color-secondary-500));
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    
+    &.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
