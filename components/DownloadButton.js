@@ -14,10 +14,10 @@ const DownloadButton = () => {
   const dropdownRef = useRef(null);
   
   const downloadOptions = [
-    { name: 'Resume (PDF)', file: '/pdfs/md-bodiuzaman-resume.pdf' },
-    { name: 'Certificate 1', file: '/pdfs/certificate-vimar.pdf' },
-    { name: 'Certificate 2', file: '/pdfs/certificate-came.pdf' },
-    { name: 'Certificate 3', file: '/pdfs/certificate-hikvision.pdf' }
+    { name: 'Resume (PDF)', file: '/cv.pdf' },
+    // { name: 'Certificate 1', file: '/pdfs/certificate-vimar.pdf' },
+    // { name: 'Certificate 2', file: '/pdfs/certificate-came.pdf' },
+    // { name: 'Certificate 3', file: '/pdfs/certificate-hikvision.pdf' }
   ];
   
   // Close dropdown when clicking outside

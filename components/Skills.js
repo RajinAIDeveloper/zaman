@@ -212,7 +212,7 @@ const Skills = () => {
                       </h4>
                     </div>
                     
-                    <a 
+                    <span 
                       href={cert.file}
                       download={`MD-Bodiuzaman-${cert.name.replace(/\s+/g, '-')}.pdf`}
                       className={`p-2 rounded-full ${
@@ -220,10 +220,10 @@ const Skills = () => {
                       } transition-colors`}
                       title="Download Certificate"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg>
-                    </a>
+                      </svg> */}
+                    </span>
                   </div>
                   
                   {/* Download hint on hover */}
@@ -233,7 +233,7 @@ const Skills = () => {
                     animate={{ opacity: hoveredCert === cert.id ? 1 : 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    {t('cert_download')}
+                    {/* {t('cert_download')} */}
                   </motion.div>
                 </motion.div>
               ))}

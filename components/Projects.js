@@ -224,7 +224,7 @@ const Projects = () => {
                   } p-6 transition-all duration-300`}
                   onClick={() => setSelectedProject(project)}
                 >
-                  <div className="relative h-60 mb-4 overflow-hidden rounded-lg">
+                  {/* <div className="relative h-60 mb-4 overflow-hidden rounded-lg">
                     <Image
                       src={project.image}
                       alt={language === 'en' ? project.title : project.titleBn}
@@ -239,7 +239,7 @@ const Projects = () => {
                         isDark ? 'bg-primary-900 text-primary-200' : 'bg-primary-100 text-primary-800'
                       }`}>{project.category}</span>
                     </div>
-                  </div>
+                  </div> */}
                   <h3 className={`text-xl font-bold ${
                     isDark 
                       ? 'text-white group-hover:text-primary-400' 
@@ -293,7 +293,7 @@ const Projects = () => {
               transition={{ type: 'spring', damping: 25 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative h-72 sm:h-80 md:h-96">
+              {/* <div className="relative h-72 sm:h-80 md:h-96">
                 <Image
                   src={selectedProject.image}
                   alt={language === 'en' ? selectedProject.title : selectedProject.titleBn}
@@ -310,7 +310,7 @@ const Projects = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
-              </div>
+              </div> */}
               <div className="p-6">
                 <div className="flex justify-between items-start mb-4">
                   <div>

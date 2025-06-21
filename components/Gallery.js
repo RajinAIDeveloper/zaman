@@ -18,7 +18,7 @@ const Gallery = () => {
       id: 1,
       title: language === 'en' ? 'CCTV Installation' : 'সিসিটিভি ইনস্টলেশন',
       category: language === 'en' ? 'Security' : 'সিকিউরিটি',
-      image: '/images/gallery/cctv.jpg',
+      image: '/gallery/cctv.jpeg',
       description: language === 'en' 
         ? 'Installing security cameras at a residential building'
         : 'আবাসিক ভবনে সিকিউরিটি ক্যামেরা ইনস্টল করা'
@@ -27,7 +27,7 @@ const Gallery = () => {
       id: 2,
       title: language === 'en' ? 'Home Automation Panel' : 'হোম অটোমেশন প্যানেল',
       category: language === 'en' ? 'Automation' : 'অটোমেশন',
-      image: '/images/gallery/automation.jpg',
+      image: '/gallery/home.webp',
       description: language === 'en'
         ? 'VIMAR home automation control panel setup'
         : 'ভিমার হোম অটোমেশন কন্ট্রোল প্যানেল সেটআপ'
@@ -36,7 +36,7 @@ const Gallery = () => {
       id: 3,
       title: language === 'en' ? 'Fiber Splicing' : 'ফাইবার স্প্লাইসিং',
       category: language === 'en' ? 'Networking' : 'নেটওয়ার্কিং',
-      image: '/images/gallery/fiber.jpg',
+      image: '/gallery/splicing.png',
       description: language === 'en'
         ? 'Precision fiber optic cable splicing work'
         : 'প্রিসিশন ফাইবার অপটিক কেবল স্প্লাইসিং কাজ'
@@ -45,7 +45,7 @@ const Gallery = () => {
       id: 4,
       title: language === 'en' ? 'Access Control System' : 'অ্যাকসেস কন্ট্রোল সিস্টেম',
       category: language === 'en' ? 'Security' : 'সিকিউরিটি',
-      image: '/images/gallery/access-control.jpg',
+      image: '/gallery/access.jpeg',
       description: language === 'en'
         ? 'Biometric access control system installation'
         : 'বায়োমেট্রিক অ্যাকসেস কন্ট্রোল সিস্টেম ইনস্টলেশন'
@@ -54,7 +54,7 @@ const Gallery = () => {
       id: 5,
       title: language === 'en' ? 'Server Rack Installation' : 'সার্ভার র‍্যাক ইনস্টলেশন',
       category: language === 'en' ? 'Networking' : 'নেটওয়ার্কিং',
-      image: '/images/gallery/server.jpg',
+      image: '/gallery/rack.jpeg',
       description: language === 'en'
         ? 'Structured cabling and server rack organization'
         : 'স্ট্রাকচারড কেবলিং এবং সার্ভার র‍্যাক অর্গানাইজেশন'
@@ -63,7 +63,7 @@ const Gallery = () => {
       id: 6,
       title: language === 'en' ? 'Intercom System' : 'ইন্টারকম সিস্টেম',
       category: language === 'en' ? 'Communication' : 'কমিউনিকেশন',
-      image: '/images/gallery/intercom.jpg',
+      image: '/gallery/intercom.png',
       description: language === 'en'
         ? 'Video intercom system for residential building'
         : 'আবাসিক ভবনের জন্য ভিডিও ইন্টারকম সিস্টেম'
@@ -72,7 +72,7 @@ const Gallery = () => {
       id: 7,
       title: language === 'en' ? 'BGM Speaker Installation' : 'বিজিএম স্পিকার ইনস্টলেশন',
       category: language === 'en' ? 'Audio' : 'অডিও',
-      image: '/images/gallery/bgm.jpg',
+      image: '/gallery/bgm.jpg',
       description: language === 'en'
         ? 'Background music system for commercial space'
         : 'বাণিজ্যিক স্পেসের জন্য ব্যাকগ্রাউন্ড মিউজিক সিস্টেম'
@@ -81,7 +81,7 @@ const Gallery = () => {
       id: 8,
       title: language === 'en' ? 'Gate Barrier' : 'গেট ব্যারিয়ার',
       category: language === 'en' ? 'Security' : 'সিকিউরিটি',
-      image: '/images/gallery/gate.jpg',
+      image: '/gallery/gate.jpeg',
       description: language === 'en'
         ? 'Automatic gate barrier installation and setup'
         : 'অটোমেটিক গেট ব্যারিয়ার ইনস্টলেশন এবং সেটআপ'
@@ -90,7 +90,7 @@ const Gallery = () => {
       id: 9,
       title: language === 'en' ? 'Structured Cabling' : 'স্ট্রাকচারড কেবলিং',
       category: language === 'en' ? 'Networking' : 'নেটওয়ার্কিং',
-      image: '/images/gallery/cabling.jpg',
+      image: '/gallery/cable.jpeg',
       description: language === 'en'
         ? 'Clean, organized network cabling infrastructure'
         : 'পরিষ্কার, সংগঠিত নেটওয়ার্ক কেবলিং ইনফ্রাস্ট্রাকচার'
@@ -199,14 +199,14 @@ const Gallery = () => {
                   onClick={() => setSelectedImage(item)}
                 >
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10"></div>
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                    style={{ objectFit: "cover" }}
-                    className="transition-transform duration-700 group-hover:scale-110"
-                  />
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                      style={{ objectFit: "cover" }}
+                      className="transition-transform duration-700 group-hover:scale-110"
+                    />
                   <div className="absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-black/70 to-transparent z-20">
                     <h3 className="text-white font-medium text-lg">{item.title}</h3>
                     <span className="text-white/80 text-sm">{item.category}</span>
